@@ -1,2 +1,2 @@
 # MinecraftCalc
-The web version of my Minecraft Construction Calculator
+The web version of my Minecraft Construction Calculator. It can't do much yet...
