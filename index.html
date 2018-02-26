@@ -1,15 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Minecraft Contruction Calculator</title>
-  </head>
-  <body>
-    <p id="error">JavaScript is not enabled for this page. You will have to enable it for this to work.</p>
-    <div id="wrapper">
-      <header>
-        <h1>Minecraft Construction Calculator</h1>
-      <p>This page has successfully loaded.</p>
-    </div>
-    <script src="scripts/default.js"></script>
-  </body>
+
+<head>
+  <title>Minecraft Construction Calculator</title>
+</head>
+
+<body>
+  <h1>Minecraft Construction Calculator</h1>
+  <p>The official HTML5 application for my Minecraft Construction Calculator.</p>
+  <form method="post" action="index.html">
+    Wall front Width <input id="width1" value="40" />
+    Wall side Width <input id="width2" value="50" />
+    Height <input id="height" value="6" />
+    <br />
+  </form>
+    Total <p id="output"></p>
+    <button onclick="calculator()" type="submit">Calculate</button>
+
+  <script>
+    function calculator() {
+      var widthFront = document.getElementById('width1').value;
+      var widthSide = document.getElementById('width2').value;
+      var height = document.getElementById('height').value;
+      var wallFront = widthFront * height;
+      var wallSide = widthSide * height;
+      var walls = (wallFront * 2) + (wallSide * 2) - (height * 4);
+      console.log('The size of the walls combined is ' + walls);
+      var floor = wallFront * wallSide;
+      var roof = wallFront * wallSide;
+      var squareTotal = walls + roof + floor;
+      console.log('The square total is ' + squareTotal);
+      document.getElementById('output').innerHTML = squareTotal;
+    }
+  </script>
+</body>
+
 </html>
